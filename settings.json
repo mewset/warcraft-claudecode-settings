@@ -1,0 +1,88 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "printf '\\uf0a9 %s' \"$(cat | jq -r '.workspace.current_dir' | xargs basename)\""
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sounds=(/home/m0s/.claude/sounds/ready-to-serve.wav /home/m0s/.claude/sounds/ready-to-work.wav /home/m0s/.claude/sounds/we-are-ready-master.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sounds=(/home/m0s/.claude/sounds/more-work.wav /home/m0s/.claude/sounds/ready-to-work.wav /home/m0s/.claude/sounds/huh-what.wav /home/m0s/.claude/sounds/i-dont-wanna-do-this.wav /home/m0s/.claude/sounds/this-way-no-that-way.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sounds=(/home/m0s/.claude/sounds/jobs-done.wav /home/m0s/.claude/sounds/work-complete.wav /home/m0s/.claude/sounds/work-completed.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "paplay /usr/share/sounds/alsa/Front_Right.wav"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "paplay /usr/share/sounds/alsa/Front_Left.wav"
+          }
+        ]
+      },
+      {
+        "matcher": "MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "paplay /usr/share/sounds/alsa/Front_Center.wav"
+          }
+        ]
+      },
+      {
+        "matcher": "TodoWrite",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "paplay /usr/share/sounds/alsa/Rear_Left.wav"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "paplay /usr/share/sounds/alsa/Side_Left.wav"
+          }
+        ]
+      }
+    ]
+  }
+}
