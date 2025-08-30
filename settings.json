@@ -36,53 +36,6 @@
           }
         ]
       }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "paplay /usr/share/sounds/alsa/Front_Right.wav"
-          }
-        ]
-      },
-      {
-        "matcher": "Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "paplay /usr/share/sounds/alsa/Front_Left.wav"
-          }
-        ]
-      },
-      {
-        "matcher": "MultiEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "paplay /usr/share/sounds/alsa/Front_Center.wav"
-          }
-        ]
-      },
-      {
-        "matcher": "TodoWrite",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "paplay /usr/share/sounds/alsa/Rear_Left.wav"
-          }
-        ]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "paplay /usr/share/sounds/alsa/Side_Left.wav"
-          }
-        ]
-      }
     ]
   }
 }
