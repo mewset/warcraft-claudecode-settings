@@ -10,7 +10,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sounds=(/home/m0s/.claude/sounds/ready-to-serve.wav /home/m0s/.claude/sounds/ready-to-work.wav /home/m0s/.claude/sounds/we-are-ready-master.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" >/dev/null 2>&1 &"
+            "command": "sounds=(~/.claude/sounds/ready-to-serve.wav ~/.claude/sounds/ready-to-work.wav ~/.claude/sounds/we-are-ready-master.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" &"
           }
         ]
       }
@@ -21,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sounds=(/home/m0s/.claude/sounds/more-work.wav /home/m0s/.claude/sounds/ready-to-work.wav /home/m0s/.claude/sounds/huh-what.wav /home/m0s/.claude/sounds/i-dont-wanna-do-this.wav /home/m0s/.claude/sounds/this-way-no-that-way.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" >/dev/null 2>&1 &"
+            "command": "sounds=(~/.claude/sounds/more-work.wav ~/.claude/sounds/ready-to-work.wav ~/.claude/sounds/huh-what.wav ~/.claude/sounds/i-dont-wanna-do-this.wav ~/.claude/sounds/we-are-ready-master.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" &"
           }
         ]
       }
@@ -32,7 +32,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sounds=(/home/m0s/.claude/sounds/jobs-done.wav /home/m0s/.claude/sounds/work-complete.wav /home/m0s/.claude/sounds/work-completed.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" >/dev/null 2>&1 &"
+            "command": "sounds=(~/.claude/sounds/jobs-done.wav ~/.claude/sounds/work-complete.wav ~/.claude/sounds/work-completed.wav); nohup paplay \"${sounds[$RANDOM % ${#sounds[@]}]}\" &"
           }
         ]
       }
